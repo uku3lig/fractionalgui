@@ -1,9 +1,10 @@
 package net.uku3lig.fractionalgui.config;
 
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.option.GameOptions;
-import net.minecraft.client.option.SimpleOption;
+import net.minecraft.client.option.DoubleOption;
+import net.minecraft.client.option.Option;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.uku3lig.fractionalgui.FractionalGui;
 import net.uku3lig.ukulib.config.screen.AbstractConfigScreen;
 
@@ -13,10 +14,11 @@ public class GuiConfigScreen extends AbstractConfigScreen<GuiConfig> {
     }
 
     @Override
-    protected SimpleOption<?>[] getOptions(GuiConfig config) {
-        return new SimpleOption[]{
-                new SimpleOption<>("Factor", SimpleOption.emptyTooltip(), GameOptions::getGenericValueText,
-                        new SimpleOption.ValidatingIntSliderCallbacks(1, 10), config.getFactor(), config::setFactor)
+    protected Option[] getOptions(GuiConfig config) {
+        return new Option[]{
+                new DoubleOption("Factor", 1, 10, 1, opt -> (double) config.getFactor(),
+                        (opt, value) -> config.setFactor(value.intValue()),
+                        (opt, option) -> new TranslatableText("options.generic_value", "Factor", config.getFactor()))
         };
     }
 }

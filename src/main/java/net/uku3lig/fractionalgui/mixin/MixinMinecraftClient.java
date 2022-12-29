@@ -22,7 +22,7 @@ public abstract class MixinMinecraftClient {
 
     @ModifyArg(method = "onResolutionChanged", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/util/Window;setScaleFactor(D)V"))
     public double changeScaleFactor(double original) {
-        return calculateScaleFactor(options.getGuiScale().getValue(), forcesUnicodeFont());
+        return calculateScaleFactor(options.guiScale, forcesUnicodeFont());
     }
 
     public double calculateScaleFactor(int guiScale, boolean forceUnicodeFont) {
