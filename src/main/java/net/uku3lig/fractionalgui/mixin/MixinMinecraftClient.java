@@ -3,13 +3,12 @@ package net.uku3lig.fractionalgui.mixin;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.util.Window;
+import net.uku3lig.fractionalgui.FractionalGui;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
-
-import static net.uku3lig.fractionalgui.FractionalGui.FACTOR;
 
 @Mixin(MinecraftClient.class)
 public abstract class MixinMinecraftClient {
@@ -27,14 +26,15 @@ public abstract class MixinMinecraftClient {
     }
 
     public double calculateScaleFactor(int guiScale, boolean forceUnicodeFont) {
+        final int factor = FractionalGui.getManager().getConfig().getFactor();
         double i = 1;
 
         while(
                 i != guiScale
-                        && i / FACTOR < window.getFramebufferWidth()
-                        && i / FACTOR < window.getFramebufferHeight()
-                        && window.getFramebufferWidth() / (i / FACTOR + 1) >= 320
-                        && window.getFramebufferHeight() / (i / FACTOR + 1) >= 240
+                        && i / factor < window.getFramebufferWidth()
+                        && i / factor < window.getFramebufferHeight()
+                        && window.getFramebufferWidth() / (i / factor + 1) >= 320
+                        && window.getFramebufferHeight() / (i / factor + 1) >= 240
         ) {
             ++i;
         }
@@ -43,6 +43,6 @@ public abstract class MixinMinecraftClient {
             ++i;
         }
 
-        return i / FACTOR;
+        return i / factor;
     }
 }

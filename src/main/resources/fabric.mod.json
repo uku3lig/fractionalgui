@@ -16,12 +16,16 @@
   "entrypoints": {
     "main": [
       "net.uku3lig.fractionalgui.FractionalGui"
+    ],
+    "ukulib": [
+      "net.uku3lig.fractionalgui.UkulibHook"
     ]
   },
   "mixins": [
     "fractionalgui.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.13"
+    "fabricloader": ">=0.13",
+    "ukulib": ">=0.3"
   }
 }
