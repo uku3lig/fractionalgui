@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "fractionalgui",
+  "version": "${version}",
+  "name": "FractionalGui",
+  "description": "adds more options for gui scale",
+  "authors": [
+    "uku"
+  ],
+  "contact": {
+    "repo": "https://github.com/uku3lig/fractionalgui"
+  },
+  "license": "MIT",
+  "icon": "assets/fractionalgui/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "net.uku3lig.fractionalgui.FractionalGui"
+    ]
+  },
+  "mixins": [
+    "fractionalgui.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.13",
+  }
+}
