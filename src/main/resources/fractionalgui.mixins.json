@@ -3,11 +3,10 @@
   "minVersion": "0.8",
   "package": "net.uku3lig.fractionalgui.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [
-  ],
   "client": [
     "MixinGameOptions",
-    "MixinMinecraftClient"
+    "MixinMinecraftClient",
+    "MixinSodiumGameOptionPages"
   ],
   "injectors": {
     "defaultRequire": 1
