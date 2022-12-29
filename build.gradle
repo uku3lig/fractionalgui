@@ -24,8 +24,11 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modApi("net.uku3lig:ukulib:${project.ukulib_version}")
+    modImplementation("maven.modrinth:sodium:${project.sodium_version}")
 
     modRuntimeOnly "maven.modrinth:lazydfu:0.1.2"
+    modRuntimeOnly fabricApi.module("fabric-rendering-data-attachment-v1", project.fabric_version)
+    modRuntimeOnly fabricApi.module("fabric-rendering-fluids-v1", project.fabric_version)
 }
 
 processResources {
