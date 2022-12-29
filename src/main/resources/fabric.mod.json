@@ -22,6 +22,6 @@
     "fractionalgui.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.13",
+    "fabricloader": ">=0.13"
   }
 }
