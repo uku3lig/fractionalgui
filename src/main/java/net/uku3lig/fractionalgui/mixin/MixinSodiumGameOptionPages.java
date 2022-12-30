@@ -3,7 +3,7 @@ package net.uku3lig.fractionalgui.mixin;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptionPages;
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.uku3lig.fractionalgui.FractionalGui;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,7 +23,7 @@ public class MixinSodiumGameOptionPages {
     private static ControlValueFormatter changeFormatter() {
         return v -> {
             String formatted = FractionalGui.FORMAT.format(((double) v) / FractionalGui.getManager().getConfig().getFactor());
-            return v == 0 ? Text.translatable("options.guiScale.auto").getString() : formatted + "x";
+            return v == 0 ? new TranslatableText("options.guiScale.auto").getString() : formatted + "x";
         };
     }
 
