@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(value = SodiumGameOptionPages.class, remap = false)
 public class MixinSodiumGameOptionPages {
-    @ModifyConstant(method = "lambda$general$9", constant = @Constant(intValue = 4))
+    @ModifyConstant(method = "lambda$general$9", constant = @Constant(intValue = 4), require = 0)
     private static int changeScaleFactor(int constant) {
         return MinecraftClient.getInstance().getWindow().calculateScaleFactor(0, MinecraftClient.getInstance().forcesUnicodeFont())
                 * FractionalGui.getManager().getConfig().getFactor();
