@@ -14,5 +14,10 @@ public class MixinOption {
         return instance.calculateScaleFactor(guiScale, forceUnicodeFont) * FractionalGui.getManager().getConfig().getFactor();
     }
 
+    @Redirect(method = "method_42522", at = @At(value = "INVOKE", target = "Ljava/lang/Integer;toString(I)Ljava/lang/String;"))
+    private static String showFractionalValue(int value) {
+        return FractionalGui.FORMAT.format(((double) value) / FractionalGui.getManager().getConfig().getFactor());
+    }
+
     private MixinOption() {}
 }
