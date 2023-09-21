@@ -7,6 +7,7 @@ import net.uku3lig.fractionalgui.FractionalGui;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
@@ -25,6 +26,7 @@ public abstract class MixinMinecraftClient {
         return calculateScaleFactor(options.getGuiScale().getValue(), forcesUnicodeFont());
     }
 
+    @Unique
     public double calculateScaleFactor(int guiScale, boolean forceUnicodeFont) {
         final int factor = FractionalGui.getManager().getConfig().getFactor();
         double i = 1;

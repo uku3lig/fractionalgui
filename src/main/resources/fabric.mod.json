@@ -14,9 +14,6 @@
   "icon": "assets/fractionalgui/icon.png",
   "environment": "client",
   "entrypoints": {
-    "main": [
-      "net.uku3lig.fractionalgui.FractionalGui"
-    ],
     "ukulib": [
       "net.uku3lig.fractionalgui.UkulibHook"
     ]
@@ -25,8 +22,9 @@
     "fractionalgui.mixins.json"
   ],
   "depends": {
+    "minecraft": ">=1.20.2",
     "fabricloader": ">=0.13",
-    "ukulib": ">=0.3"
+    "ukulib": "^1.0.0"
   },
   "breaks": {
     "optifabric": "*"

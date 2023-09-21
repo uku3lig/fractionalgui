@@ -20,7 +20,7 @@ public class MixinSodiumGameOptionPages {
     private static ControlValueFormatter changeFormatter() {
         return v -> {
             String formatted = FractionalGui.FORMAT.format(((double) v) / FractionalGui.getManager().getConfig().getFactor());
-            return v == 0 ? Text.translatable("options.guiScale.auto").getString() : formatted + "x";
+            return Text.of(v == 0 ? Text.translatable("options.guiScale.auto").getString() : formatted + "x");
         };
     }
 
