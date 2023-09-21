@@ -12,5 +12,5 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class GuiConfig implements Serializable {
-    private int factor;
+    private int factor = 1;
 }
