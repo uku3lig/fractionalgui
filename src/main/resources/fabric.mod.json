@@ -23,7 +23,7 @@
   ],
   "depends": {
     "fabricloader": ">=0.13",
-    "ukulib": ">=0.3"
+    "ukulib": "^1.0.0"
   },
   "breaks": {
     "optifabric": "*",

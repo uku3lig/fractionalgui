@@ -11,7 +11,7 @@ import java.util.Locale;
 
 public class FractionalGui {
     @Getter
-    private static final ConfigManager<GuiConfig> manager = ConfigManager.create(GuiConfig.class, "fractionalgui");
+    private static final ConfigManager<GuiConfig> manager = ConfigManager.createDefault(GuiConfig.class, "fractionalgui");
     public static final DecimalFormat FORMAT = new DecimalFormat("0.##", DecimalFormatSymbols.getInstance(Locale.ROOT));
 
     public static double calculateScaleFactor(Window window, int guiScale, boolean forceUnicodeFont) {

@@ -4,17 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import net.uku3lig.ukulib.config.IConfig;
+
+import java.io.Serializable;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class GuiConfig implements IConfig<GuiConfig> {
-    private int factor;
-
-    @Override
-    public GuiConfig defaultConfig() {
-        return new GuiConfig(5);
-    }
+public class GuiConfig implements Serializable {
+    private int factor = 2;
 }
