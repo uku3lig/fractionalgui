@@ -14,9 +14,6 @@
   "icon": "assets/fractionalgui/icon.png",
   "environment": "client",
   "entrypoints": {
-    "main": [
-      "net.uku3lig.fractionalgui.FractionalGui"
-    ],
     "ukulib": [
       "net.uku3lig.fractionalgui.UkulibHook"
     ]
@@ -29,6 +26,7 @@
     "ukulib": ">=0.3"
   },
   "breaks": {
-    "optifabric": "*"
+    "optifabric": "*",
+    "sodium": "<0.5"
   }
 }

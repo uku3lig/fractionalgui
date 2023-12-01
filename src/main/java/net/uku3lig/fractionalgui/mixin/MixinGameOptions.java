@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinGameOptions {
     @Redirect(method = "method_42479", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/util/Window;calculateScaleFactor(IZ)I"))
     private static int changeScaleFactor(Window instance, int guiScale, boolean forceUnicodeFont) {
-        return instance.calculateScaleFactor(guiScale, forceUnicodeFont) * FractionalGui.getManager().getConfig().getFactor();
+        return FractionalGui.maxScaleFactor(instance, forceUnicodeFont);
     }
 
     @Redirect(method = "method_42522", at = @At(value = "INVOKE", target = "Ljava/lang/Integer;toString(I)Ljava/lang/String;"))
