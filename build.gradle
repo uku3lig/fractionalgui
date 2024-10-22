@@ -26,6 +26,7 @@ dependencies {
 
     modRuntimeOnly fabricApi.module("fabric-rendering-data-attachment-v1", project.fabric_version)
     modRuntimeOnly fabricApi.module("fabric-rendering-fluids-v1", project.fabric_version)
+    modRuntimeOnly fabricApi.module("fabric-renderer-api-v1", project.fabric_version)
 }
 
 processResources {
